@@ -37,8 +37,8 @@ console.log("load id");
     var load_ipython_extension = function () {
 
         if (Jupyter.notebook !== undefined) {
-            events.on('kernel_idle.Kernel', load_id);
             events.on("notebook_loaded.Notebook", load_id);
+            events.on("kernel_ready.Kernel", load_id);
         }
     };
 
