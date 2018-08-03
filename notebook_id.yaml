@@ -1,0 +1,7 @@
+Type: IPython Notebook Extension
+Compatibility: 5.x
+Main: main.js
+Name: Notebook ID
+Icon: icon.png
+Description: "Assign each notebook a unique ID and make it accessible to the kernel."
+Link: readme.md
