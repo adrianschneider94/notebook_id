@@ -24,6 +24,7 @@ define([
     }
 
     function load_id() {
+console.log("load id");
 
         if (Jupyter.notebook.metadata._notebook_id_ == undefined) {
             Jupyter.notebook.metadata._notebook_id_ = generateUUID();
@@ -35,10 +36,9 @@ define([
 
     var load_ipython_extension = function () {
 
-        if (Jupyter.notebook !== undefined && Jupyter.notebook._fully_loaded) {
-            load_id();
+        if (Jupyter.notebook !== undefined) {
+            events.on('kernel_idle.Kernel', load_id);
             events.on("notebook_loaded.Notebook", load_id);
-            events.on('kernel_ready.Kernel', load_id);
         }
     };
 
