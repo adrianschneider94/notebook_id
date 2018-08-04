@@ -1,5 +1,3 @@
-// Adds a button to hide the input part of the currently selected cells
-
 define([
     'jquery',
     'base/js/namespace',
@@ -24,7 +22,6 @@ define([
     }
 
     function load_id() {
-console.log("load id");
 
         if (Jupyter.notebook.metadata._notebook_id_ == undefined) {
             Jupyter.notebook.metadata._notebook_id_ = generateUUID();
